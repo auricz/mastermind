@@ -7,9 +7,9 @@ bool Player::is_input_valid(std::string s)
     {
         for (int i = 0; i < 4; i++)
         {
-            if (s[i] != 'R' && s[i] != 'O' && s[i] != 'Y' && s[i] != 'G' && s[i] != 'B' && s[i] != 'P')
+            if (s[i] != '1' && s[i] != '2' && s[i] != '3' && s[i] != '4' && s[i] != '5' && s[i] != '6')
             {
-                std::cout << "\nOnly enter letters of ROYGBP.\n\n";
+                std::cout << "\nOnly enter numbers from 1 to 6.\n\n";
                 return false;
             }
         }
@@ -21,7 +21,7 @@ bool Player::is_input_valid(std::string s)
     }
     else
     {
-        std::cout << "\nEnter 4 letters only.\n\n";
+        std::cout << "\nEnter 4 numbers only.\n\n";
         return false;
     }
 }
