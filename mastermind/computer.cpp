@@ -6,6 +6,33 @@
 
 const std::vector<char> Computer::possible_nums = { '1', '2', '3', '4', '5', '6' };
 
+std::vector<char> Computer::sort(std::vector<char> feedback)
+{
+	std::vector<char> sorted_vec;
+	for (int i = 0; i < 4; i++)
+	{
+		if (feedback[i] == '+')
+		{
+			sorted_vec.push_back('+');
+		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (feedback[i] == '-')
+		{
+			sorted_vec.push_back('-');
+		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (feedback[i] == ' ')
+		{
+			sorted_vec.push_back(' ');
+		}
+	}
+	return sorted_vec;
+}
+
 std::vector<char> Computer::make_random_code()
 {
 	srand((unsigned int)time(0));
@@ -42,5 +69,5 @@ std::vector<char> Computer::give_feedback(std::vector<char> current_guess, std::
 			current_feedback.push_back(' ');
 		}
 	}
-	return current_feedback;
+	return sort(current_feedback);
 }
