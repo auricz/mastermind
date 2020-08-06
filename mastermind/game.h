@@ -1,5 +1,6 @@
 #pragma once
-#include<vector>
+#include <vector>
+#include <string>
 
 class Game
 {
@@ -16,5 +17,6 @@ public:
 	void show_board();				// Shows the previous guesses and feedback
 	bool is_player_winner();		// True if current guess is same as solution
 	bool reached_max_guesses();		// True if 10 guesses have been made
+	std::string get_solution();
 	static void show_intro();		// Shows the intro at the start
 };	
