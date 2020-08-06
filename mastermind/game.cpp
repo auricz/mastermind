@@ -28,7 +28,7 @@ void Game::player_guess()
 
 void Game::show_board()
 {
-	std::cout << "\n";
+	std::cout << "\n\n";
 	std::cout << "             Past Guesses  | Feedback \n";
 	std::cout << "                           |          \n";
 	for (unsigned int i = 0; i < previous_guesses.size(); i++)
@@ -37,6 +37,7 @@ void Game::show_board()
 		std::vector<char> f = feedback[i];
 		printf("   Guess %i	%c %c %c %c    | %c %c %c %c \n", i + 1, g[0], g[1], g[2], g[3], f[0], f[1], f[2], f[3]);
 	}
+	std::cout << "\n";
 }
 
 bool Game::is_player_winner()
