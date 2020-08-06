@@ -8,6 +8,11 @@ Game::Game()
 	nums_of_guesses = 0;
 }
 
+void Game::player_guess()
+{
+
+}
+
 void Game::show_board()
 {
 	std::cout << "  Past Guesses | Feedback \n";
@@ -51,7 +56,7 @@ void Game::show_intro()
 	std::cout << "==============================\n";
 	std::cout << "Guess a 4-color code and try to guess the correct code. You must guess the correct code in 10 guesses or less to win.\n";
 	std::cout << "After each guess, the computer will provide feedback next to your guess (- means a color in wrong spot, + means a color in correct spot).\n";
-	std::cout << "There are 6 colors to choose: (R)ed, (O)range, (Y)ellow, (G)reen, (B)lue, (V)iolet.\n";
+	std::cout << "There are 6 colors to choose: (R)ed, (O)range, (Y)ellow, (G)reen, (B)lue, (P)urple.\n";
 	std::cout << "Answer without spaces nor blanks (i.e. 'ROYG' for red, orange, yellow, green).\n";
 }
 
