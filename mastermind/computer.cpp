@@ -1,6 +1,7 @@
 #include <vector>
 #include <stdlib.h>
 #include <ctime>
+#include <algorithm>
 #include "computer.h"
 
 const std::vector<char> Computer::possible_nums = { '1', '2', '3', '4', '5', '6' };
@@ -15,4 +16,31 @@ std::vector<char> Computer::make_random_code()
 		code.push_back(possible_nums[rand_index]);
 	}
 	return code;
+}
+
+std::vector<char> Computer::give_feedback(std::vector<char> current_guess, std::vector<char> solution)
+{
+	std::vector<char> current_feedback;
+	std::vector<char> temp_guess = current_guess;
+	std::vector<char> temp_solution = solution;
+	for (int i = 0; i < 4; i++)
+	{
+		if (temp_guess[i] == temp_solution[i])
+		{
+			current_feedback.push_back('+');
+			temp_guess[i] = '-';
+			temp_solution[i] = '=';
+		}
+		else if (std::find(temp_solution.begin(), temp_solution.end(), temp_guess[i]) != temp_solution.end())
+		{
+			current_feedback.push_back('-');
+			temp_guess[i] = '-';
+			temp_solution[i] = '=';
+		}
+		else
+		{
+			current_feedback.push_back(' ');
+		}
+	}
+	return current_feedback;
 }
