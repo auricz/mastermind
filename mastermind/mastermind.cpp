@@ -6,8 +6,26 @@ Player wins if he/she guesses the code in 10 guesses or less.
 */
 
 #include <iostream>
+#include "game.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Game::show_intro();
+    
+    Game game;
+    
+    while (!game.is_player_winner() && !game.reached_max_guesses())
+    {
+        game.player_guess();
+        game.show_board();
+    }
+
+    if (game.is_player_winner())
+    {
+        std::cout << "\nCongratulations, you guessed the correct code: " << game.get_solution() << "\n";
+    }
+    else if (game.reached_max_guesses())
+    {
+        std::cout << "\nYou lost. The correct code was " << game.get_solution() << "\n";
+    }
 }
