@@ -3,6 +3,7 @@
 #include <ctime>
 #include <algorithm>
 #include "computer.h"
+#include <iostream>
 
 const std::vector<char> Computer::possible_nums = { '1', '2', '3', '4', '5', '6' };
 
@@ -58,7 +59,10 @@ std::vector<char> Computer::give_feedback(std::vector<char> current_guess, std::
 			temp_guess[i] = '-';
 			temp_solution[i] = '=';
 		}
-		else if (std::find(temp_solution.begin(), temp_solution.end(), temp_guess[i]) != temp_solution.end())
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (std::find(temp_solution.begin(), temp_solution.end(), temp_guess[i]) != temp_solution.end())
 		{
 			current_feedback.push_back('-');
 			temp_guess[i] = '-';
@@ -68,6 +72,10 @@ std::vector<char> Computer::give_feedback(std::vector<char> current_guess, std::
 		{
 			current_feedback.push_back(' ');
 		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << solution[i];
 	}
 	return sort(current_feedback);
 }
