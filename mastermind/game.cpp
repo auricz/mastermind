@@ -2,12 +2,14 @@
 #include <string>
 #include "game.h"
 #include "player.h"
+#include "computer.h"
 
 const int Game::max_guesses = 10;
 
 Game::Game()
 {
 	nums_of_guesses = 0;
+	solution = Computer::make_random_code();
 }
 
 void Game::player_guess()
