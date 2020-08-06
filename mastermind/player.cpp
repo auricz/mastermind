@@ -9,7 +9,7 @@ bool Player::is_input_valid(std::string s)
         {
             if (s[i] != '1' && s[i] != '2' && s[i] != '3' && s[i] != '4' && s[i] != '5' && s[i] != '6')
             {
-                std::cout << "\nOnly enter numbers from 1 to 6.\n\n";
+                std::cout << "\nOnly enter numbers from 1 to 6.\n";
                 return false;
             }
         }
@@ -21,7 +21,7 @@ bool Player::is_input_valid(std::string s)
     }
     else
     {
-        std::cout << "\nEnter 4 numbers only.\n\n";
+        std::cout << "\nEnter 4 numbers only.\n";
         return false;
     }
 }
@@ -32,7 +32,7 @@ std::string Player::ask_player()
     bool is_valid_input = false;
     while (!is_input_valid(input))
     {
-        std::cout << "Enter your guess: ";
+        std::cout << "\nEnter your guess: ";
         std::cin >> input;
     }
     return input;
