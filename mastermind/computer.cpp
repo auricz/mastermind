@@ -68,14 +68,10 @@ std::vector<char> Computer::give_feedback(std::vector<char> current_guess, std::
 			temp_guess[i] = '-';
 			temp_solution[i] = '=';
 		}
-		else
-		{
-			current_feedback.push_back(' ');
-		}
 	}
-	for (int i = 0; i < 4; i++)
+	while (current_feedback.size() != 4)
 	{
-		std::cout << solution[i];
+		current_feedback.push_back(' ');
 	}
 	return sort(current_feedback);
 }
